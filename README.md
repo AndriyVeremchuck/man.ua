@@ -1,6 +1,7 @@
 # 📖 man.ua — Українська системна документація та довідник Man-Pages
 
 [![CachyOS Linux](https://img.shields.io/badge/OS-CachyOS%20Linux-00acc1?style=flat-square&logo=linux)](https://cachyos.org)
+[![Ubuntu](https://img.shields.io/badge/OS-Ubuntu%20%2F%20Debian-e95420?style=flat-square&logo=ubuntu)](https://ubuntu.com)
 [![Language](https://img.shields.io/badge/Language-Українська%20(UK)-blue?style=flat-square)](https://github.com)
 [![Sections](https://img.shields.io/badge/Man%20Sections-1%20to%209-10b981?style=flat-square)](https://man7.org)
 [![License](https://img.shields.io/badge/License-GPL%20%2F%20MIT-amber?style=flat-square)](LICENSE)
@@ -36,6 +37,115 @@
 | **7** | **Огляди, конвенції, стандарти та макроси** | Оглядові статті, мережеві протоколи, таблиці кодувань, стандарти POSIX, структура ФС та макропакети (`groff`). | `man 7 ip`<br>`man 7 tcp`<br>`man 7 hier`<br>`man 7 utf-8`<br>`man 7 man-pages` |
 | **8** | **Команди системного адміністрування** | Утиліти керування службами, демонами, дисковими розділами, мережею та безпекою (зазвичай вимагають привілеїв `root`). | `man 8 systemctl`<br>`man 8 btrfs`<br>`man 8 fdisk`<br>`man 8 iptables`<br>`man 8 pacman` |
 | **9** | **Внутрішні підпрограми ядра Linux** | Нестандартний розділ документації внутрішніх інтерфейсів ядра, підсистем та модулів розробки драйверів. | `man 9 kmalloc`<br>`man 9 sk_buff` |
+
+---
+
+## 🛠️ Встановлення та налаштування на системі (CachyOS vs Ubuntu)
+
+Щоб система автоматично відкривала сторінки українською мовою при виклику `man <команда>`, виконайте інструкцію для вашого дистрибутива:
+
+### 1. ⚡ CachyOS / Arch Linux
+
+#### Крок 1: Встановлення пакетів підтримки `man-db` та українських сторінок
+```bash
+# Встановлення основного рушія man-db:
+sudo pacman -S man-db man-pages
+
+# Встановлення пакету українських man-сторінок з AUR (через paru або yay):
+paru -S man-pages-uk
+# або:
+yay -S man-pages-uk
+```
+
+#### Крок 2: Генерація української локалі
+Переконайтеся, що в `/etc/locale.gen` розкоментовано рядок `uk_UA.UTF-8 UTF-8`, та згенеруйте локаль:
+```bash
+sudo locale-gen
+```
+
+#### Крок 3: Оновлення індексу бази посібників
+```bash
+sudo mandb
+```
+
+---
+
+### 2. 🐧 Ubuntu / Debian Linux
+
+#### Крок 1: Встановлення пакетів української документації
+```bash
+sudo apt update
+sudo apt install man-db manpages manpages-uk manpages-uk-dev
+```
+
+#### Крок 2: Генерація та налаштування локалі
+```bash
+sudo locale-gen uk_UA.UTF-8
+sudo update-locale LANG=uk_UA.UTF-8
+```
+
+#### Крок 3: Оновлення індексу бази посібників
+```bash
+sudo mandb -c
+```
+
+---
+
+### 🔄 Порівняльна таблиця відмінностей: CachyOS vs Ubuntu
+
+| Характеристика | ⚡ CachyOS (Arch-based) | 🐧 Ubuntu / Debian |
+| :--- | :--- | :--- |
+| **Пакетний менеджер** | `pacman` / `paru` / `yay` | `apt` |
+| **Пакет українських man** | `man-pages-uk` (AUR) | `manpages-uk`, `manpages-uk-dev` |
+| **Формат стиснення сторінок** | `.zst` / `.gz` (висока компресія Zstandard) | `.gz` (Gzip) |
+| **Файл конфігурації локалей** | `/etc/locale.gen` + `locale-gen` | `/etc/default/locale` + `update-locale` |
+| **Каталог зберігання сторінок** | `/usr/share/man/uk/` | `/usr/share/man/uk/` |
+| **Команда оновлення індексу** | `sudo mandb` | `sudo mandb -c` |
+
+---
+
+### 📥 3. Ручне встановлення man-сторінок безпосередньо з цього репозиторію
+
+Якщо ви перекладаєте власні сторінки або бажаєте додати файли з репозиторію `man.ua`:
+
+```bash
+# 1. Клонувати репозиторій:
+git clone https://github.com/AndreyVeremchuck/man.ua.git
+cd man.ua
+
+# 2. Створити необхідні цільові директорії під розділи (наприклад, man1 та man3):
+sudo mkdir -p /usr/share/man/uk/man1 /usr/share/man/uk/man3
+
+# 3. Скопіювати man-файли у відповідний розділ:
+sudo cp pages/man1/* /usr/share/man/uk/man1/
+sudo cp pages/man3/* /usr/share/man/uk/man3/
+
+# 4. Оновити індекс пошуку mandb:
+sudo mandb
+```
+
+---
+
+### 💡 Як примусово відкривати українську версію (`man -L uk`)
+
+Якщо основна мова вашої системи встановлена англійською (`LANG=en_US.UTF-8`), ви можете викликати український переклад прапорцем `-L uk` або створити зручний аліас:
+
+* **Разовий виклик**:
+  ```bash
+  man -L uk intro
+  man -L uk 1 ls
+  man -L uk man
+  ```
+
+* **Створення аліасу `uman` (для Fish / Bash / Zsh)**:
+  ```bash
+  # Для Fish (~/.config/fish/config.fish):
+  alias uman="man -L uk"
+
+  # Для Bash/Zsh (~/.bashrc або ~/.zshrc):
+  alias uman='man -L uk'
+  ```
+  Тепер команда `uman intro` миттєво відкриватиме українську документацію!
 
 ---
 
