@@ -24,15 +24,16 @@ fi
 
 DEST_DIR="/usr/share/man/uk"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MAN_SOURCE="${SCRIPT_DIR}/man"
 
 echo -e "\n${YELLOW}1/4. Створення цільової директорії ${DEST_DIR}...${NC}"
 mkdir -p "${DEST_DIR}"
 
-echo -e "${YELLOW}2/4. Копіювання розділів man-сторінок (man1 - man9)...${NC}"
+echo -e "${YELLOW}2/4. Копіювання розділів man-сторінок (man1 - man9) з каталогу man/...${NC}"
 for sec in 1 2 3 4 5 6 7 8 9; do
-    if [ -d "${SCRIPT_DIR}/man${sec}" ]; then
+    if [ -d "${MAN_SOURCE}/man${sec}" ]; then
         mkdir -p "${DEST_DIR}/man${sec}"
-        cp -r "${SCRIPT_DIR}/man${sec}/"* "${DEST_DIR}/man${sec}/" 2>/dev/null || true
+        cp -r "${MAN_SOURCE}/man${sec}/"* "${DEST_DIR}/man${sec}/" 2>/dev/null || true
         count=$(find "${DEST_DIR}/man${sec}" -type f | wc -l)
         echo -e "   ✓ ${GREEN}man${sec}${NC}: скопійовано (${count} сторінок)"
     fi
