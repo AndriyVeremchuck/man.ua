@@ -1,19 +1,23 @@
 # 📖 tar(1) — Українська системна документація
 
 > **Розділ 1**: Виконувані програми та команди оболонки  
+> **Пакет**: `tar`  
 > **Оригінальний виклик**: `man 1 tar`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`tar`** — Утиліта створення, розпакування та маніпулювання архівами
+**`tar`** — Еталонний архіватор Linux для створення та вилучення tar-архівів із підтримкою компресії gz, bz2, xz, zstd.
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-tar [-c|-x|-t] [-z|-j|-J|-I zstd] -f archive.tar [FILES...]
+tar [OPTIONS] [ARGUMENTS...]
 ```
+
+### ⚡ Ключові прапорці та опції:
+`-cvf (створити), -xvf (витягти), -z (gzip), -j (bzip2), -J (xz), -t (список)`
 
 ---
 
@@ -29,14 +33,9 @@ tar [-c|-x|-t] [-z|-j|-J|-I zstd] -f archive.tar [FILES...]
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-$ tar -I zstd -cf arch.tar.zst dir/
-$ tar -xvf arch.tar.gz
+$ tar -czvf backup.tar.gz ./folder/  # Створити стиснений архів tar.gz
+$ tar -xzvf backup.tar.gz -C /opt/  # Розпакувати архів у цільовий каталог
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 1**, [`gzip`](gzip.md), [`zstd`](zstd.md), [`xz`](xz.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

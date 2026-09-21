@@ -1,6 +1,7 @@
 # 📖 open(2) — Українська системна документація
 
 > **Розділ 2**: Системні виклики ядра Linux  
+> **Пакет**: `system`  
 > **Оригінальний виклик**: `man 2 open`
 
 ---
@@ -29,13 +30,8 @@ int open(const char *pathname, int flags, mode_t mode);
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-int fd = open("file.txt", O_RDONLY | O_CLOEXEC);
+int fd = open("file.txt", O_RDONLY);
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 2**, [`creat`](creat.md), [`close`](close.md), [`read`](read.md), [`write`](write.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

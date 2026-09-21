@@ -1,19 +1,23 @@
 # 📖 find(1) — Українська системна документація
 
 > **Розділ 1**: Виконувані програми та команди оболонки  
+> **Пакет**: `findutils`  
 > **Оригінальний виклик**: `man 1 find`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`find`** — Рекурсивний пошук файлів та директорій за критеріями та атрибутами
+**`find`** — Гнучкий та потужний пошук файлів за назвою, типом, розміром, датою зміни та правами доступу.
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-find [PATH...] [EXPRESSION]
+find [OPTIONS] [ARGUMENTS...]
 ```
+
+### ⚡ Ключові прапорці та опції:
+`-name <шаблон>, -type f/d, -size +100M, -mtime -7, -exec ... \;`
 
 ---
 
@@ -29,14 +33,9 @@ find [PATH...] [EXPRESSION]
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-$ find . -type f -name '*.md'
-$ find /tmp -mtime +7 -delete
+$ find . -type f -name "*.py"  # Знайти всі файли Python у поточному дереві папок
+$ find /var/log -type f -size +50M  # Знайти файли логів розміром понад 50 МБ
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 1**, [`fd`](fd.md), [`locate`](locate.md), [`xargs`](xargs.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

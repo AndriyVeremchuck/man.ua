@@ -1,19 +1,23 @@
 # 📖 curl(1) — Українська системна документація
 
 > **Розділ 1**: Виконувані програми та команди оболонки  
+> **Пакет**: `curl`  
 > **Оригінальний виклик**: `man 1 curl`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`curl`** — Утиліта для передачі даних за мережевими протоколами (HTTP, HTTPS, FTP)
+**`curl`** — Універсальний інструмент передачі даних за протоколами HTTP, HTTPS, FTP, REST API з підтримкою заголовків та проксі.
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-curl [OPTIONS...] <url>
+curl [OPTIONS] [ARGUMENTS...]
 ```
+
+### ⚡ Ключові прапорці та опції:
+`-I (лише HTTP заголовки), -s (тихий режим), -LO (зберегти файл за ім'ям з URL), -d (POST дані), -H <заголовок>`
 
 ---
 
@@ -29,14 +33,9 @@ curl [OPTIONS...] <url>
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-$ curl -fsSL https://get.url | bash
-$ curl -I https://example.com
+$ curl -I https://google.com  # Отримати HTTP-заголовки сервера
+$ curl -s https://api.ipify.org  # Швидко дізнатися публічну IP-адресу
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 1**, [`wget`](wget.md), [`http`](http.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

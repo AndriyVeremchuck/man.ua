@@ -1,19 +1,23 @@
 # 📖 systemctl(8) — Українська системна документація
 
 > **Розділ 8**: Команди системного адміністрування (Root)  
+> **Пакет**: `systemd`  
 > **Оригінальний виклик**: `man 8 systemctl`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`systemctl`** — Керування системним менеджером systemd та фоновими службами
+**`systemctl`** — Центральний інструмент керування системними службами, демонами, сокетами та таймерами systemd.
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-systemctl [OPTIONS...] COMMAND [UNIT...]
+systemctl [OPTIONS] [ARGUMENTS...]
 ```
+
+### ⚡ Ключові прапорці та опції:
+`status <юніт>, start/stop, enable/disable --now, list-units --type=service, --user (користувацькі)`
 
 ---
 
@@ -29,14 +33,9 @@ systemctl [OPTIONS...] COMMAND [UNIT...]
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-$ sudo systemctl start docker
-$ systemctl status NetworkManager
+$ systemctl status NetworkManager.service  # Перевірити статус мережевої служби
+$ systemctl list-units --type=service --state=running  # Список усіх активних працюючих служб
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 8**, [`journalctl`](journalctl.md), [`systemd`](systemd.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

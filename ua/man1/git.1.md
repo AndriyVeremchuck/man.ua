@@ -1,19 +1,23 @@
 # 📖 git(1) — Українська системна документація
 
 > **Розділ 1**: Виконувані програми та команди оболонки  
+> **Пакет**: `git`  
 > **Оригінальний виклик**: `man 1 git`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`git`** — Розподілена система керування версіями вихідного коду
+**`git`** — Головна розподілена система контролю версій для відстеження змін у коді та колаборації.
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-git [--version] [--help] [-C <path>] <command> [<args>]
+git [OPTIONS] [ARGUMENTS...]
 ```
+
+### ⚡ Ключові прапорці та опції:
+`status, commit -m '<повідомлення>', push, pull, log --oneline -n 10, diff`
 
 ---
 
@@ -29,15 +33,9 @@ git [--version] [--help] [-C <path>] <command> [<args>]
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-$ git status
-$ git commit -m 'Docs update'
-$ git push
+$ git status  # Перевірити стан репозиторію та змінених файлів
+$ git log --oneline -n 10  # Переглянути останні 10 комітів
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 1**, [`git-commit`](git-commit.md), [`git-diff`](git-diff.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

@@ -1,6 +1,7 @@
 # 📖 read(2) — Українська системна документація
 
 > **Розділ 2**: Системні виклики ядра Linux  
+> **Пакет**: `system`  
 > **Оригінальний виклик**: `man 2 read`
 
 ---
@@ -31,11 +32,6 @@ ssize_t read(int fd, void *buf, size_t count);
 ```bash
 ssize_t n = read(fd, buffer, sizeof(buffer));
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 2**, [`write`](write.md), [`open`](open.md), [`pread`](pread.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

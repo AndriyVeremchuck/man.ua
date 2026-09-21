@@ -1,12 +1,13 @@
 # 📖 malloc(3) — Українська системна документація
 
 > **Розділ 3**: Бібліотечні виклики C / libc / Wayland API  
+> **Пакет**: `glibc`  
 > **Оригінальний виклик**: `man 3 malloc`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`malloc`** — Динамічне виділення блоку пам'яті заданого розміру у купі (heap)
+**`malloc`** — Динамічне виділення пам'яті заданого розміру в купі (heap)
 
 ---
 
@@ -29,15 +30,8 @@ void *malloc(size_t size);
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-char *buf = (char *)malloc(1024);
-if (!buf) { /* помилка */ }
-free(buf);
+char *buf = malloc(1024); free(buf);
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 3**, [`free`](free.md), [`calloc`](calloc.md), [`realloc`](realloc.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

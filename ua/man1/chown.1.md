@@ -1,19 +1,23 @@
 # 📖 chown(1) — Українська системна документація
 
 > **Розділ 1**: Виконувані програми та команди оболонки  
+> **Пакет**: `coreutils`  
 > **Оригінальний виклик**: `man 1 chown`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`chown`** — Зміна власника та групи файлів або каталогів
+**`chown`** — Зміна власника та групи файлів і каталогів.
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-chown [OPTIONS] [OWNER][:[GROUP]] FILE...
+chown [OPTIONS] [ARGUMENTS...]
 ```
+
+### ⚡ Ключові прапорці та опції:
+`-R (рекурсивно), користувач:група, -v (детально)`
 
 ---
 
@@ -29,14 +33,8 @@ chown [OPTIONS] [OWNER][:[GROUP]] FILE...
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-$ sudo chown user:group file.txt
-$ sudo chown -R $USER:$USER .
+$ sudo chown -R dusha:dusha /opt/myproject  # Надати повні права володіння поточному користувачу
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 1**, [`chmod`](chmod.md), [`chgrp`](chgrp.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

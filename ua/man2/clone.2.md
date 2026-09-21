@@ -1,12 +1,13 @@
 # 📖 clone(2) — Українська системна документація
 
 > **Розділ 2**: Системні виклики ядра Linux  
+> **Пакет**: `system`  
 > **Оригінальний виклик**: `man 2 clone`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`clone`** — Створення дочірнього процесу або потоку з налаштуванням просторів імен
+**`clone`** — Створення дочірнього процесу або потоку з налаштуванням просторів імен (namespaces)
 
 ---
 
@@ -31,11 +32,6 @@ int clone(int (*fn)(void *), void *stack, int flags, void *arg, ...);
 ```bash
 clone(child_fn, stack_top, CLONE_VM | CLONE_FS | SIGCHLD, NULL);
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 2**, [`fork`](fork.md), [`unshare`](unshare.md), [`namespaces`](namespaces.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

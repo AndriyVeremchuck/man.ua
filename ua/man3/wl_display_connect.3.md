@@ -1,12 +1,13 @@
 # 📖 wl_display_connect(3) — Українська системна документація
 
 > **Розділ 3**: Бібліотечні виклики C / libc / Wayland API  
+> **Пакет**: `wayland`  
 > **Оригінальний виклик**: `man 3 wl_display_connect`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`wl_display_connect`** — Підключення клієнтського додатку до Wayland-композитора
+**`wl_display_connect`** — Підключення клієнта до Wayland-композитора через UNIX-сокет
 
 ---
 
@@ -31,11 +32,6 @@ struct wl_display *wl_display_connect(const char *name);
 ```bash
 struct wl_display *dpy = wl_display_connect(NULL);
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 3**, [`wl_display_disconnect`](wl_display_disconnect.md), [`wayland`](wayland.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

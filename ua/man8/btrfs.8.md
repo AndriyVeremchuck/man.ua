@@ -1,19 +1,23 @@
 # 📖 btrfs(8) — Українська системна документація
 
 > **Розділ 8**: Команди системного адміністрування (Root)  
+> **Пакет**: `btrfs-progs`  
 > **Оригінальний виклик**: `man 8 btrfs`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`btrfs`** — Утиліта керування файловою системою Btrfs, підтомами та снапшотами
+**`btrfs`** — Повне керування розширеними можливостями Btrfs: субтоми, знімки (снапшоти), scrub та балансування.
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-btrfs <command> [<args>]
+btrfs [OPTIONS] [ARGUMENTS...]
 ```
+
+### ⚡ Ключові прапорці та опції:
+`filesystem usage <шлях>, subvolume list <шлях>, scrub start <шлях>, balance start <шлях>`
 
 ---
 
@@ -29,14 +33,9 @@ btrfs <command> [<args>]
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-$ sudo btrfs subvolume list /
-$ sudo btrfs filesystem df /
+$ btrfs filesystem usage /  # Детальний звіт про використання даних та метаданих Btrfs
+$ sudo btrfs scrub start /  # Запуск фонової перевірки цілісності файлової системи
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 8**, [`snapper`](snapper.md), [`mkfs.btrfs`](mkfs.btrfs.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

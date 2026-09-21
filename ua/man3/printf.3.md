@@ -1,12 +1,13 @@
 # 📖 printf(3) — Українська системна документація
 
 > **Розділ 3**: Бібліотечні виклики C / libc / Wayland API  
+> **Пакет**: `glibc`  
 > **Оригінальний виклик**: `man 3 printf`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`printf`** — Форматоване виведення тексту у стандартний потік (stdout)
+**`printf`** — Форматоване виведення тексту у стандартний потік виводу (stdout)
 
 ---
 
@@ -29,13 +30,8 @@ int printf(const char *format, ...);
 
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
-printf("Привіт, %s! Число: %d\n", "Світ", 42);
+printf("Число: %d\n", 42);
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 3**, [`sprintf`](sprintf.md), [`snprintf`](snprintf.md), [`fprintf`](fprintf.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

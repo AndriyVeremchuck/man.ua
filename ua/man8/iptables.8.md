@@ -1,6 +1,7 @@
 # 📖 iptables(8) — Українська системна документація
 
 > **Розділ 8**: Команди системного адміністрування (Root)  
+> **Пакет**: `iptables`  
 > **Оригінальний виклик**: `man 8 iptables`
 
 ---
@@ -32,11 +33,6 @@ iptables [-t table] {-A|-D|-I} chain rule-specification
 $ sudo iptables -L -n -v
 $ sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 8**, [`nft`](nft.md), [`ufw`](ufw.md), [`firewalld`](firewalld.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

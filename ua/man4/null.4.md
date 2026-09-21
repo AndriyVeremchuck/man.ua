@@ -1,18 +1,19 @@
 # 📖 null(4) — Українська системна документація
 
 > **Розділ 4**: Спеціальні файли та пристрої (/dev)  
+> **Пакет**: `kernel`  
 > **Оригінальний виклик**: `man 4 null`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`null`** — Нульовий пристрій скидання даних (/dev/null) та генератор нулів (/dev/zero)
+**`null`** — Нульовий пристрій скидання вихідних даних (/dev/null)
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-/dev/null, /dev/zero
+/dev/null
 ```
 
 ---
@@ -30,13 +31,7 @@
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
 $ command > /dev/null 2>&1
-$ dd if=/dev/zero of=test.img bs=1M count=10
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 4**, [`zero`](zero.md), [`random`](random.md), [`urandom`](urandom.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

@@ -1,6 +1,7 @@
 # 📖 passwd(5) — Українська системна документація
 
 > **Розділ 5**: Формати конфігураційних файлів (/etc)  
+> **Пакет**: `system`  
 > **Оригінальний виклик**: `man 5 passwd`
 
 ---
@@ -31,11 +32,6 @@
 ```bash
 dusha:x:1000:1000:Andrey:/home/dusha:/usr/bin/fish
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 5**, [`shadow`](shadow.md), [`group`](group.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

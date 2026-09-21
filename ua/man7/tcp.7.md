@@ -1,18 +1,19 @@
 # 📖 tcp(7) — Українська системна документація
 
 > **Розділ 7**: Огляди, стандарти, конвенції та протоколи  
+> **Пакет**: `networking`  
 > **Оригінальний виклик**: `man 7 tcp`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`tcp`** — Протокол керування передачею даних TCP (Transmission Control Protocol)
+**`tcp`** — Протокол керування передачею даних TCP (Transmission Control Protocol IPv4/IPv6)
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-TCP / IP v4/v6 протокол
+TCP Protocol
 ```
 
 ---
@@ -30,14 +31,7 @@ TCP / IP v4/v6 протокол
 ## 💡 ПРАКТИЧНІ ПРИКЛАДИ (EXAMPLES)
 ```bash
 $ man 7 tcp
-$ man 7 ip
-$ man 7 socket
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 7**, [`ip`](ip.md), [`udp`](udp.md), [`socket`](socket.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

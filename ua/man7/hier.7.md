@@ -1,18 +1,19 @@
 # 📖 hier(7) — Українська системна документація
 
 > **Розділ 7**: Огляди, стандарти, конвенції та протоколи  
+> **Пакет**: `filesystem`  
 > **Оригінальний виклик**: `man 7 hier`
 
 ---
 
 ## 🎯 НАЗВА (NAME)
-**`hier`** — Опис структури та ієрархії стандартної файлової системи Linux/UNIX
+**`hier`** — Опис структури та ієрархії стандартної файлової системи Linux/UNIX (/usr, /etc, /var, /dev)
 
 ---
 
 ## ⚙️ КОРОТКИЙ ОПИС (SYNOPSIS)
 ```bash
-/, /bin, /etc, /usr, /var, /opt, /dev, /proc, /sys
+Ієрархія ФС
 ```
 
 ---
@@ -31,11 +32,6 @@
 ```bash
 $ man 7 hier
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 7**, [`file-hierarchy`](file-hierarchy.md), [`pathname`](pathname.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

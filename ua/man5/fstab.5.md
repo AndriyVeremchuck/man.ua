@@ -1,6 +1,7 @@
 # 📖 fstab(5) — Українська системна документація
 
 > **Розділ 5**: Формати конфігураційних файлів (/etc)  
+> **Пакет**: `system`  
 > **Оригінальний виклик**: `man 5 fstab`
 
 ---
@@ -31,11 +32,6 @@
 ```bash
 UUID=xxxx-xxxx / btrfs subvol=@,compress=zstd:3 0 0
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 5**, [`mount`](mount.md), [`crypttab`](crypttab.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*

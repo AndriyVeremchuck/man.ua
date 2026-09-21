@@ -1,6 +1,7 @@
 # 📖 write(2) — Українська системна документація
 
 > **Розділ 2**: Системні виклики ядра Linux  
+> **Пакет**: `system`  
 > **Оригінальний виклик**: `man 2 write`
 
 ---
@@ -31,11 +32,6 @@ ssize_t write(int fd, const void *buf, size_t count);
 ```bash
 write(STDOUT_FILENO, "Hello\n", 6);
 ```
-
----
-
-## 🔗 ДИВІТЬСЯ ТАКОЖ (SEE ALSO)
-**Розділ 2**, [`read`](read.md), [`open`](open.md), [`pwrite`](pwrite.md)
 
 ---
 *Документ є частиною проєкту [man.ua](https://github.com/AndreyVeremchuck/man.ua).*
